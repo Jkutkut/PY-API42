@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 13:00:04 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/09/08 13:09:35 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/09/08 14:23:10 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,12 @@ import requests
 from requests import Response
 import time
 
-from __secrets__ import uid as UID
-from __secrets__ import secret as SECRET
+try:
+	from .__secrets__ import uid as UID
+	from .__secrets__ import secret as SECRET
+except Exception as e:
+	print("API42 credentials not added. Read documentation for more information.")
+	exit(0)
 
 class API42:
 	'''
