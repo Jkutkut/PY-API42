@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 13:00:04 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/09/08 14:23:10 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/09/09 11:51:57 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,13 @@ class API42:
 	URL = "https://api.intra.42.fr"
 
 	ERROR_CODES = {
-		# TODO Fill
 		400: "Something in the request is not right. The server doesn't understand the request.",
-		000: "You don't have the right permissions to access this information.",
-		404: "Not found.",
+		401: "You don't have the right permissions to access this information.",
+		403: "Forbidden.",
+		404: "Page or resource is not found.",
+		422: "Unprocessable entity."
 		429: "Are the credentials valid?",
+		500: "We have a problem with our server. Please try again later."
 	}
 
 	def __init__(self) -> None:
