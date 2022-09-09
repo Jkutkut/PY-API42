@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/19 13:00:04 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/09/09 15:35:15 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/09/09 18:49:49 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,7 +122,7 @@ class API42:
 			r = API42.get_request(full_url, headers).json()
 			if type(r) != list:
 				return r
-			if len(r) < 100:
+			if len(r) < page_size:
 				running = False
 			response = r + response
 			i = i + 1
